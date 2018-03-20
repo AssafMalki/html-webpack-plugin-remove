@@ -12,7 +12,7 @@ HtmlWebpackPluginRemove.prototype.apply = function(compiler) {
 
     compiler.plugin("compilation", function(compilation) {
         // Hook into html-webpack-plugin event
-        compilation.plugin('html-webpack-plugin-after-html-processing', function(pluginData, cb) {
+        compilation.plugin('html-webpack-plugin-before-html-processing', function(pluginData, cb) {
             pluginData.html = pluginData.html.replace(test, '');
 
             if (cb) {
